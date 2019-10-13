@@ -1,91 +1,130 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>World Population Statistics</title>
 
     <!-- css style links -->
     <!-- bootstrap -->
     <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
     <link rel="stylesheet" href="../static/css/dc.min.css">
     <!-- font awesome -->
     <!-- css link -->
     <link rel="stylesheet" href="../static/css/style.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Quicksand:300,400,500,600,700&display=swap" rel="stylesheet">
 
     <!-- js links -->
     <script type="text/javascript" src="../static/js/d3.min.js"></script>
     <script type="text/javascript" src="../static/js/crossfilter.min.js"></script>
     <script type="text/javascript" src="../static/js/dc.min.js"></script>
     <script type="text/javascript" src="../static/js/queue.min.js"></script>
-    
+    <script type="text/javascript" src="../static/js/Chart.min.js"></script>
+    <script src="https://kit.fontawesome.com/ac319f9005.js" crossorigin="anonymous"></script>
+
+
+
     <script src="../static/js/graph.js"></script>
 
-<body>
+    <body>
 
-<header>
+        <header>
 
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+            <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand" href="#">
             <img src="" width="30" height="30" class="d-inline-block align-top" alt="">
             Welcome to PopStats
         </a>
-    </nav>
-</header>
+            </nav>
+        </header>
+        <div class="container-fluid callout-container">
+            <!-- Callout -->
+            <div class="opaque-overlay">&nbsp;</div>
+            <div class="col-12">
+                <section class="callout jumbotron text-center">
+                    <h1> WORLD </h1>
+                    <h2>Population Statistics </h2>
+                </section>
+            </div>
+        </div>
 
-<div class="container-fluid callout-container">
-    <!-- Callout -->
-    <div class="opaque-overlay">&nbsp;</div>
-    <div class="col-12">
-        <section class="callout jumbotron text-center">
-            <h1> WORLD </h1>
-            <h2> Population Statistics </h2>
-        </section>
-    </div>
-</div>
+        <div class="graph-one">
+            <!--bar graph showing population total -->
+            <div class="col-12">
+                <canvas id="pop-total" width="800" height="500"></canvas>
+                <!-- mapped graph of population growth - this will be separate page-->
 
-<!--bar graph showing population total -->
+            </div>
+        </div>
 
-<canvas id="pop-total" width="500" height="500"></canvas>
+        <div class="container-fluid col-12 br-image-victoria">
+        </div>
+
+        <div class="graph-two">
+            <div class="col-12">
+                <canvas id="pop-growth" width="800" height="500"></canvas>
+
+            </div>
+        </div>
+
+        <div class="container-fluid col-12 br-image-market">
+        </div>
+
+        <div class="graph-three">
+            <div class="col-12">
+                <canvas id="timer-births" width="800" height="500"></canvas>
+            </div>
+        </div>
 
 
-<div id="pop-growth-line"></div>
+        <!-- timer of births -->
+        
+                <div class="container-fluid col-12 br-image-kids">
+        </div>
+
+        <div class="graph-fourth">
+            <div class="col-12">
+                <canvas id="timer-births" width="800" height="500"></canvas>
+            </div>
+        </div>
+        <!-- -->
 
 
-<!-- mapped graph of population growth-->
+        <!-- -->
+    
+        
+        <!-- table of data -->
+        <div class="table">
+            <div class="col-md-6">
+            </div>
+        </div>
 
 
-<!-- timer of births -->
 
-
-
-
-
-
-
-<footer class="container-fluid ">
-    <div class="col-md-6">
-        <p>
-            <a class="uppercase general-sub footer-heading" target="_blank" href="#">Source: Data World Bank</a>
-        </p>
-    </div>
-    <div class="col-md-6">
-        <p class="uppercase general-sub footer-heading"> Share </p>
-        <ul class="list-inline social-links footer-text">
-            <li class="list-inline-item"><a target="_blank" href="/"><i class="fab fa-facebook-f border border-white"
+        <footer class="container-fluid ">
+            <div class="col-md-6">
+                <p>
+                    <a class="uppercase general-sub footer-heading" target="_blank" href="#">Source: Data World Bank</a>
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p class="uppercase general-sub footer-heading"> Share </p>
+                <ul class="list-inline social-links footer-text">
+                    <li class="list-inline-item"><a target="_blank" href="/"><i class="fab fa-facebook" aria-hidden="true"></i><span
+                    class="sr-only"> </span></a></li>
+                    <li class="list-inline-item"><a target="_blank" href="#"><i class="fab fa-twitter"
                                                                         aria-hidden="true"></i><span
                     class="sr-only"> </span></a></li>
-            <li class="list-inline-item"><a target="_blank" href="#"><i class="fab fa-twitter border border-white"
-                                                                        aria-hidden="true"></i><span
-                    class="sr-only"> </span></a></li>
-        </ul>
-    </div>
-</footer>
+                </ul>
+            </div>
+        </footer>
 
 
 
-</body>
+    </body>
+
 </html>

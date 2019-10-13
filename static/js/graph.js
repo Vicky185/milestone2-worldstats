@@ -1,12 +1,11 @@
 //create crossfilter() and we have one of these for the whole site.
-
-//queue()
-//  .defer(d3.csv, '../data/population-total/totalpop.json')
-//    .await(makeGraphs);
-
+queue()
+  .defer(d3.csv, '../data/population-total/totalpop.json')
+   .await(show_pop_total(worldPopData));
 
 
-var worldPop = [
+
+var worldPopData = [
     { year: "1960", population: "3032019978" },
     { year: "1961", population: "3073077563" },
     { year: "1962", population: "3126066253" },
@@ -69,16 +68,18 @@ var worldPop = [
 ];
 
 
-function show_pop_total(ndx) {
+function show_pop_total(error, worldPopData) {
 
     //population growth line graph - id = pop-growth
 
-    var ndx = crossfilter(worldPop);
+    let ndx = crossfilter(worldPopData);
 
     var year_dim = ndx.dimension(dc.pluck('year'));
     var total_population_per_year = ndx.dimension(dc.pluck('population'));
-    var minYear = worldPop[0].year;
-    var maxYear = worldPop[57].year;
+    //  var minYear = worldPop[0].year;
+    //var maxYear = worldPop[58].year;
+    var minYear = year_dim.bottom(1)[0].year;
+    var maxYear = year_dim.top(1)[58].year;
     worldPop.forEach(function(d) {
         d.year = parseYear(d.year);
     });
@@ -100,17 +101,48 @@ function show_pop_total(ndx) {
 
 }
 
-function makeGraphs(error, totalpopData) {
-    show_pop_total(ndx);
-
-    dc.renderAll;
+//function makeGraphs(error, totalpopData) {
+//
+//    show_pop_total(ndx);
+//
+//    dc.renderAll;
 
 
     //    show_pop_growth_line(ndx);
     //   show_pop_growth(ndx);
 
+//}
 
-}
+makeGraphs();
+
+queue()
+            .defer(d3.json, "../data/transactions.json")
+            .await(makeGraphs);
+
+        function makeGraphs(error, transactionsData) {
+            var ndx = crossfilter(transactionsData);
+            var parseDate = d3.time.format("%d/%m/%Y").parse;
+            transactionsData.forEach(function(d) {
+                d.date = parseDate(d.date);
+            });
+            var date_dim = ndx.dimension(dc.pluck('date'));
+            var total_spend_per_date = date_dim.group().reduceSum(dc.pluck('spend'));
+            var minDate = date_dim.bottom(1)[0].date;
+            var maxDate = date_dim.top(1)[0].date;
+            dc.lineChart("#chart-here")
+                .width(1000)
+                .height(300)
+                .margins({ top: 10, right: 50, bottom: 30, left: 50 })
+                .dimension(date_dim)
+                .group(total_spend_per_date)
+                .transitionDuration(500)
+                .x(d3.time.scale().domain([minDate, maxDate]))
+                .xAxisLabel("Month")
+                .yAxis().ticks(4);
+            dc.renderAll();
+        }
+
+
 
 
 /*queue()
