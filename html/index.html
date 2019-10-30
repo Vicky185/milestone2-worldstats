@@ -9,26 +9,21 @@
 
     <!-- css style links -->
     <!-- bootstrap -->
-    <link rel="stylesheet" href="../static/css/bootstrap.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
-    <link rel="stylesheet" href="../static/css/dc.min.css">
+
     <!-- font awesome -->
     <!-- css link -->
     <link rel="stylesheet" href="../static/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Quicksand:300,400,500,600,700&display=swap" rel="stylesheet">
 
     <!-- js links -->
-    <script type="text/javascript" src="../static/js/d3.min.js"></script>
-    <script type="text/javascript" src="../static/js/crossfilter.min.js"></script>
-    <script type="text/javascript" src="../static/js/dc.min.js"></script>
+    <script type="text/javascript" src="../static/js/d3.js"></script>
+    <script type="text/javascript" src="../static/js/crossfilter.js"></script>
+    <script type="text/javascript" src="../static/js/dc.js"></script>
     <script type="text/javascript" src="../static/js/queue.min.js"></script>
-    <script type="text/javascript" src="../static/js/Chart.min.js"></script>
-    <script src="https://kit.fontawesome.com/ac319f9005.js" crossorigin="anonymous"></script>
 
 
-
-    <script src="../static/js/graph.js"></script>
 
     <body>
 
@@ -41,6 +36,8 @@
         </a>
             </nav>
         </header>
+
+
         <div class="container-fluid callout-container">
             <!-- Callout -->
             <div class="opaque-overlay">&nbsp;</div>
@@ -52,11 +49,17 @@
             </div>
         </div>
 
+
         <div class="graph-one">
             <!--bar graph showing population total -->
             <div class="col-12">
-                <canvas id="pop-total" width="800" height="500"></canvas>
-                <!-- mapped graph of population growth - this will be separate page-->
+                <h3> Total Population Stats from 1960 - 2018</h3>
+                <button onclick="change_data_display()">How about in a bar chart?</button>
+                <div id="pop-total"></div>
+                <div id="pop-total-bar"><svg /></div>
+
+
+                <!-- want a mapped graph of population growth - this will be separate page-->
 
             </div>
         </div>
@@ -74,29 +77,35 @@
         <div class="container-fluid col-12 br-image-market">
         </div>
 
+
+
         <div class="graph-three">
             <div class="col-12">
-                <canvas id="timer-births" width="800" height="500"></canvas>
+                <canvas id="" width="800" height="500"></canvas>
             </div>
         </div>
 
 
         <!-- timer of births -->
-        
-                <div class="container-fluid col-12 br-image-kids">
+
+        <div class="container-fluid col-12 br-image-kids">
         </div>
 
         <div class="graph-fourth">
             <div class="col-12">
-                <canvas id="timer-births" width="800" height="500"></canvas>
+
+                <div class="col-md-4" id="timer-pop"> Current World Population</div>
+                <div class="col-md-4" id="timer-births"> Births Today </div>
+                <div class="col-md-4" id="timer-deaths"> Deaths Today</div>
+                
             </div>
         </div>
         <!-- -->
 
 
         <!-- -->
-    
-        
+
+
         <!-- table of data -->
         <div class="data-table">
             <div class="header">
@@ -126,6 +135,14 @@
             </div>
         </footer>
 
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="../static/js/graph.js"></script>
+
+    <script src="https://kit.fontawesome.com/ac319f9005.js" crossorigin="anonymous"></script>
 
 
     </body>
