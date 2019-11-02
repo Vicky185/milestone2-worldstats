@@ -22,118 +22,103 @@
     <script type="text/javascript" src="../static/js/crossfilter.js"></script>
     <script type="text/javascript" src="../static/js/dc.js"></script>
     <script type="text/javascript" src="../static/js/queue.min.js"></script>
+</head>
 
+<body>
 
+    <header>
 
-    <body>
-
-        <header>
-
-            <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand" href="#">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">
             <img src="" width="30" height="30" class="d-inline-block align-top" alt="">
             Welcome to PopStats
         </a>
-            </nav>
-        </header>
+        </nav>
+    </header>
 
 
-        <div class="container-fluid callout-container">
-            <!-- Callout -->
-            <div class="opaque-overlay">&nbsp;</div>
-            <div class="col-12">
-                <section class="callout jumbotron text-center">
-                    <h1> WORLD </h1>
-                    <h2>Population Statistics </h2>
-                </section>
-            </div>
+    <div class="container-fluid callout-container">
+        <!-- Callout -->
+        <div class="opaque-overlay">&nbsp;</div>
+        <div class="col-12">
+            <section class="callout jumbotron text-center">
+                <h1> WORLD </h1>
+                <h2>Population Statistics </h2>
+            </section>
         </div>
+    </div>
 
 
-        <div class="graph-one">
-            <!--bar graph showing population total -->
-            <div class="col-12">
-                <h3> Total Population Stats from 1960 - 2018</h3>
-                <button onclick="change_data_display()">How about in a bar chart?</button>
-                <div id="pop-total"></div>
-                <div id="pop-total-bar"><svg /></div>
-
-
-                <!-- want a mapped graph of population growth - this will be separate page-->
-
-            </div>
+    <div class="graph-one">
+        <!--bar graph showing population total -->
+        <div class="col-12">
+            <h3> Total Population Stats from 1960 - 2018</h3>
+            <div id="pop-total"></div>
+            <div id="pop-total-bar"></div>
+            <h5> What do you think about the world's population from these graphs?</h5>
+            <p> According to the UN World Data Bank, the world’s population is 7.6 billion and is expected to reach 8.6 billion in 2030, 9.8 billion by 2050 and 11.2 billion in 2100. Roughly, 83 million people are being added to the world’s population every
+                year, the upward trend in population size is expected to continue, even assuming that fertility levels will continue to decline. </p>
+            <button onclick="change_data_display()">How about in a bar chart?</button>
         </div>
+    </div>
 
-        <div class="container-fluid col-12 br-image-victoria">
-        </div>
+    <div class="container-fluid col-12 br-image-victoria">
+    </div>
 
-        <div class="graph-two">
-            <div class="col-12">
-                <canvas id="pop-growth" width="800" height="500"></canvas>
-
-            </div>
-        </div>
-
-        <div class="container-fluid col-12 br-image-market">
-        </div>
-
-
-
-        <div class="graph-three">
-            <div class="col-12">
-                <canvas id="" width="800" height="500"></canvas>
-            </div>
-        </div>
-
-
-        <!-- timer of births -->
-
-        <div class="container-fluid col-12 br-image-kids">
-        </div>
-
-        <div class="graph-fourth">
-            <div class="col-12">
-
-                <div class="col-md-4" id="timer-pop"> Current World Population</div>
-                <div class="col-md-4" id="timer-births"> Births Today </div>
-                <div class="col-md-4" id="timer-deaths"> Deaths Today</div>
-                
-            </div>
-        </div>
-        <!-- -->
-
-
-        <!-- -->
-
-
-        <!-- table of data -->
-        <div class="data-table">
-            <div class="header">
-                <span> Country </span>
-                <span> Year </span>
-                <span> Population (billions)</span>
-            </div>
-        </div>
-
-
-
-        <footer class="container-fluid ">
-            <div class="col-md-6">
-                <p>
-                    <a class="uppercase general-sub footer-heading" target="_blank" href="#">Source: Data World Bank</a>
+    <div class="graph-two">
+        <div class="col-12">
+            <h3> World Population Sex Ratio from 1960 - 2018</h3>
+            <div id="percentage-compositeChart">
+                <h5>How about hovering over the graph to see the differences of male to female population over time.</h5>
+                <p>The sex ratio – the share of the population that is male or female – varies greatly across the world. Globally, in 2017, the share of women in the world was 49.6%. There are many factors that can contribute to why there is a difference
+                    between men and women. Can you name a few?
+                    <div class="hint" id="ratioHint" onmouseover="show_hint(this)" onmouseout="hide_hint(this)" style="background-color:#3d52d5;width:100%"> Hint?</div>
                 </p>
             </div>
-            <div class="col-md-6">
-                <p class="uppercase general-sub footer-heading"> Share </p>
-                <ul class="list-inline social-links footer-text">
-                    <li class="list-inline-item"><a target="_blank" href="/"><i class="fab fa-facebook" aria-hidden="true"></i><span
+        </div>
+    </div>
+
+    <div class="container-fluid col-12 br-image-market">
+    </div>
+
+
+
+    <div class="graph-three">
+        <div class="col-12">
+            <canvas id="" width="800" height="500"></canvas>
+        </div>
+    </div>
+
+
+    <div class="container-fluid col-12 br-image-kids">
+    </div>
+
+    <div class="graph-four">
+        <div class="col-12">
+
+        </div>
+    </div>
+
+
+
+
+    <footer class="container-fluid ">
+        <div class="col-md-6">
+            <p>
+                <a class="uppercase general-sub footer-heading" target="_blank" href="#">Source: Data World Bank</a>
+            </p>
+        </div>
+        <div class="col-md-6">
+            <p class="uppercase general-sub footer-heading"> Share </p>
+            <ul class="list-inline social-links footer-text">
+                <li class="list-inline-item"><a target="_blank" href="/"><i class="fab fa-facebook" aria-hidden="true"></i><span
                     class="sr-only"> </span></a></li>
-                    <li class="list-inline-item"><a target="_blank" href="#"><i class="fab fa-twitter"
+                <li class="list-inline-item"><a target="_blank" href="#"><i class="fab fa-twitter"
                                                                         aria-hidden="true"></i><span
                     class="sr-only"> </span></a></li>
-                </ul>
-            </div>
-        </footer>
+            </ul>
+        </div>
+    </footer>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -145,6 +130,6 @@
     <script src="https://kit.fontawesome.com/ac319f9005.js" crossorigin="anonymous"></script>
 
 
-    </body>
+</body>
 
 </html>

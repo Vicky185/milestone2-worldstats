@@ -1,59 +1,57 @@
 /* styling for index.html */
 
 .callout-container {
-    height: 100vh;
+  height: 100vh;
 
-    background: url('../images/bw-crowd-pexels-photo-1299086.jpg') no-repeat bottom right fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background: url('../images/bw-crowd-pexels-photo-1299086.jpg') no-repeat bottom right fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    position: relative;
+  position: relative;
 }
 
 .opaque-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .jumbotron {
-    background-color: rgba(255, 255, 255, 0.55);
-    text-align: center;
+  background-color: rgba(255, 255, 255, 0.55);
+  text-align: center;
 }
 
 .jumbotron h1 {
-    color: #374463;
-    font-family: 'Lato', sans-serif;
-    font-weight: 900;
-    font-size: 7em;
-    text-align: center;
-    margin-bottom: 5px;
-    letter-spacing: 1em;
+  color: #374463;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 7em;
+  text-align: center;
+  margin-bottom: 5px;
+  letter-spacing: 1em;
 }
 
 .jumbotron h2 {
-    color: #4A5B84;
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-    margin-bottom: 30px;
-    font-size: 2em;
+  color: #4A5B84;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-size: 2em;
 }
 
 /*h1 {
     font-family: 'Quicksand: 400', sans-serif;
     color: #f3cf55;
 }*/
-
-
 
 /* electric blue color = #090c9b (9/12/155)
 black/grey for general text color = #3c3744 (60/55/68)
@@ -63,143 +61,71 @@ off white color = #fbfff1 (251/255/241)
  */
 
 .br-image-victoria {
-    height: 50vh;
+  height: 50vh;
 
-    background: url('../images/victoria-station-busy-people-victoria-735795.jpeg') no-repeat bottom right fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background: url('../images/victoria-station-busy-people-victoria-735795.jpeg') no-repeat bottom right fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    position: relative;
+  position: relative;
 }
 
 .br-image-market {
-    height: 50vh;
+  height: 50vh;
 
-    background: url('../images/bw-crowd-pexels-photo-757432.jpg') no-repeat bottom right fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background: url('../images/bw-crowd-pexels-photo-757432.jpg') no-repeat bottom right fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    position: relative;
+  position: relative;
 }
 
 /* babies img source:https://www.pewresearch.org/fact-tank/2013/09/24/the-odds-that-you-will-give-birth-to-a-boy-or-girl-depend-on-where-in-the-world-you-live/*/
 
 .br-image-kids {
-    height: 50vh;
+  height: 50vh;
 
-    background: url('../images/kids.jpg') no-repeat bottom right fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background: url('../images/kids.jpg') no-repeat bottom right fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    position: relative;
+  position: relative;
 }
 
 
 footer {
-    background-color: #3c3744;
-    color: #fbfff1;
-}
-
-/* map div */
-#chartdiv {
-  width: 100%;
-  height: 500px;
+  background-color: #3c3744;
+  color: #fbfff1;
 }
 
 
+/* graph styling */
 
-/* styling our map page */
-
-#popmap {
-    width: 100%;
-    height: 500px;
+.axis {
+  font: 10px sans-serif;
 }
 
-div#layout {
-  text-align: center;
-}
-
-div#pop-total-bar {
-  width: 1000px;
-  height: 600px;
-  margin: auto;
-  background-color: #2F4A6D;
-}
-
-svg {
-  width: 100%;
-  height: 100%;
-}
-
-.bar {
-  fill: #80cbc4;
-}
-
-text {
-  font-size: 12px;
-  fill: #fff;
-}
-
-path {
-  stroke: gray;
-}
-
-line {
-  stroke: gray;
-}
-
-line#limit {
-  stroke: #FED966;
-  stroke-width: 3;
-  stroke-dasharray: 3 6;
-}
-
-.grid path {
-  stroke-width: 0;
-}
-
-.grid .tick line {
-  stroke: #9FAAAE;
-  stroke-opacity: 0.3;
-}
-
-text.divergence {
-  font-size: 14px;
-  fill: #2F4A6D;
-}
-
-text.value {
-  font-size: 14px;
-}
-
-text.title {
-  font-size: 22px;
-  font-weight: 600;
-}
-
-text.label {
-  font-size: 14px;
-  font-weight: 400;
-}
-
-text.source {
-  font-size: 10px;
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
 }
