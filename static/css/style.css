@@ -48,18 +48,6 @@
   font-size: 2em;
 }
 
-/*h1 {
-    font-family: 'Quicksand: 400', sans-serif;
-    color: #f3cf55;
-}*/
-
-/* electric blue color = #090c9b (9/12/155)
-black/grey for general text color = #3c3744 (60/55/68)
-mid-blue color = #3d52d5 (61/82/213)
-light blue color = #b4c5e4 (180/197/228)
-off white color = #fbfff1 (251/255/241)
- */
-
 .br-image-victoria {
   height: 50vh;
 
@@ -117,6 +105,8 @@ footer {
 }
 
 
+
+
 /* graph styling */
 
 .axis {
@@ -129,3 +119,59 @@ footer {
   stroke: #000;
   shape-rendering: crispEdges;
 }
+
+
+/* table styling */ 
+.objecttable td {
+  padding: 8px;
+}
+
+th {
+  text-align: left;
+}
+
+th,
+td {
+  padding: 0 1em 0.5ex 0;
+}
+
+th.center,
+td.center {
+  text-align: center;
+}
+
+th.num,
+td.num {
+  text-align: right;
+}
+
+/* headers */
+h3,
+h4,
+h5 {
+font-family: 'Lato', sans-serif;
+font-weight: bolder;
+color: #4A5B84;
+}
+
+p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1em;
+  color: #3c3744;
+}
+
+
+/* button */
+.btn {
+  margin-bottom: 30px;
+  margin-top: 10px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+
+/* electric blue color = #090c9b (9/12/155)
+black/grey for general text color = #3c3744 (60/55/68)
+mid-blue color = #3d52d5 (61/82/213)
+light blue color = #b4c5e4 (180/197/228)
+off white color = #fbfff1 (251/255/241)
+ */

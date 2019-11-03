@@ -9,8 +9,10 @@ function makeGraphs(error, worldPopData) {
 
     show_population_lineTotal(ndx);
     show_population_barTotal(ndx);
-    
+
     show_percent_gender(ndx);
+
+    show_percent_stackGender(ndx);
 
     dc.renderAll();
 }
@@ -113,8 +115,6 @@ function show_population_barTotal(ndx) {
 }
 
 
-
-
 // want to have a button with function that switches between the two views
 change_data_display();
 // Generates a Random set of data and plots it as a bar chart
@@ -155,6 +155,7 @@ function show_percent_gender(ndx) {
             }
         };
     }
+
     function percent_male(percentMale) {
         return function(d) {
             if (d.date === date) {
@@ -196,11 +197,88 @@ function show_percent_gender(ndx) {
 show_hint();
 hide_hint();
 
-function show_hint(obj){
-    obj.innerHTML = "How about social, economic and cultural factors? Life Expectancy, Sex ratios at birth and Geographical factors";
+function show_hint(obj) {
+    obj.innerHTML = ["How about social, economic and cultural factors? Life Expectancy, Sex ratios at birth and Geographical factors"];
 }
+
 function hide_hint(obj) {
     obj.innerHTML = "Hint?";
 }
-    
 
+function show_percent_stackGender() {
+
+    //1960/2018 data specifically
+    var data = [
+        { date: 1960, female: 49.97, male: 50.02 },
+        { date: 2018, female: 49.58, male: 50.41 }
+    ];
+
+    function rankByFGender(dimension, female) {
+        return data.dimension.group().reduce(
+            function(p, v) {
+                p.total++;
+                if (v.female === female) {
+                    p.match++;
+                }
+                return p;
+            },
+            function(p, v) {
+                p.total--;
+                if (v.female === female) {
+                    p.match--;
+                }
+                return p;
+            },
+            function() {
+                return { total: 0, match: 0 };
+            }
+        );
+    }
+
+    function rankByMGender(dimension, male) {
+        return data.dimension.group().reduce(
+            function(p, v) {
+                p.total++;
+                if (v.female === male) {
+                    p.match++;
+                }
+                return p;
+            },
+            function(p, v) {
+                p.total--;
+                if (v.female === male) {
+                    p.match--;
+                }
+                return p;
+            },
+            function() {
+                return { total: 0, match: 0 };
+            }
+        );
+    }
+
+
+    var fgenderByDate = rankByFGender(data, "female");
+    var mgenderByDate = rankByMGender(data, "male");
+
+    dc.barChart("#percent-stackChart")
+        .width(1000)
+        .height(500)
+        .dimension(data)
+        .group(fgenderByDate, "female")
+        .stack(mgenderByDate, "male")
+        .valueAccessor(function(d) {
+            if (d.value.total > 0) {
+                return (d.value.match / d.value.total) * 100;
+            }
+            else {
+                return 0;
+            }
+        })
+        .x(d3.scale.ordinal())
+        .xUnits(dc.units.ordinal)
+        .xAxisLabel("Year")
+        .yAxisLabel("Percentage Female/Male of World Population")
+        .legend(dc.legend().x(320).y(20).itemHeight(15).gap(5))
+        .margins({ top: 10, right: 100, bottom: 30, left: 30 });
+}
