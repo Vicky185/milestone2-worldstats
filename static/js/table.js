@@ -1,70 +1,43 @@
-queue()
-    .defer(d3.csv, "../data/population-total/pop-total.csv")
-    .await(makeGraphs);
+d3.text("../data/population-total/pop-total.csv", function(popTable) {
 
-const popTotalData = "../data/population-total/pop-total.csv";
+    var parsedCSV = d3.csv.parseRows(popTable);
 
-function makeGraphs(error, popTotalData) {
-    var ndx = crossfilter(popTotalData);
+    var container = d3.select("population_table")
+        .append("table")
+        .style("border-collapse", "collapse")
+        .style("border", "2px black solid");
 
-    show_population_table(ndx);
+    d3.text("data.csv", function(data) {
+        var parsedCSV = d3.csv.parseRows(data);
 
+        var container = d3.select("body")
+            .append("table")
 
-    dc.renderAll();
-}
+            .selectAll("tr")
+            .data(parsedCSV).enter()
+            .append("tr")
 
-function show_population_table(ndx) {
+            .selectAll("td")
+            .data(function(d) { return d; }).enter()
+            .append("td")
+            .text(function(d) { return d; })
+            .style("border", "1px black solid")
+            .style("padding", "5px")
+            .on("mouseover", function() { d3.select(this).style("background-color", "aliceblue") })
+            .on("mouseout", function() { d3.select(this).style("background-color", "white") })
+            .text(function(d) { return d; })
+            .style("font-size", "12px");
+    });
+});
 
+showHide_pop_table();
 
-    // column definitions
-    var columns = [
-        { head: 'Country', cl: 'title', csv: ƒ('country') },
-        { head: 'Population Total', cl: 'num', csv: ƒ('popTotal') },
-        { head: 'Percentage Female', cl: 'num', csv: ƒ('percentPopFemale') },
-        { head: 'Percentage Male', cl: 'num', csv: ƒ('percentPopMale', d3.format('$%')) },
-    ];
-
-    // create table
-    var table = d3.select('tbody')
-        .append('table');
-
-    // create table header
-    table.append('thead').append('tr')
-        .selectAll('th')
-        .data(columns).enter()
-        .append('th')
-        .attr('class', ƒ('c1'))
-        .text(ƒ('head'));
-
-    // create table body
-    table.append('tbody')
-        .selectAll('tr')
-        .data(ndx).enter()
-        .append('tr')
-        .selectAll('td')
-        .data(function(row, i) {
-            return columns.map(function(c) {
-                // compute cell values for this specific row
-                var cell = {};
-                d3.keys(c).forEach(function(k) {
-                    cell[k] = typeof c[k] == 'function' ? c[k](row, i) : c[k];
-                });
-                return cell;
-            });
-        }).enter()
-        .append('td')
-        .html(ƒ('csv'))
-        .attr('class', ƒ('cl'));
-
-}
-
-
-show_pop_table();
-
-function show_pop_table() {
-    
-    document.getElementById('population-table').onclick = function() {
-        document.getElementById("population-table").style.display = "block";
+function showHide_pop_table() {
+    var popTable = document.getElementById("population_table");
+    if (popTable.style.display === "none") {
+        popTable.style.display = "block";
     }
-
+    else {
+        popTable.style.display = "none";
+    }
 }
