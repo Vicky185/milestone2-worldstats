@@ -1,9 +1,9 @@
 queue()
-    .defer(d3.csv, "../data/population-total/worldPop.csv")
+    .defer(d3.csv, "data/population-total/worldPop.csv")
     .await(makeGraphs);
 
 
-function makeGraphs(error, worldPop) {
+d3.csv("data/population-total/worldPop.csv", function makeGraphs(error, worldPop) {
 
     var ndx = crossfilter(worldPop);
 
@@ -15,13 +15,13 @@ function makeGraphs(error, worldPop) {
     show_percent_stackGender(ndx);
 
     dc.renderAll();
-}
+});
 
 // line graph showing the population total growing from 1960 - 2018
 
 function show_population_lineTotal(ndx) {
 
-    const worldPop = "../data/population-total/worldPop.csv";
+    const worldPop = "data/population-total/worldPop.csv";
 
     worldPop.forEach(function(d) {
         d.date = parseDate(d.date);
@@ -44,7 +44,7 @@ function show_population_lineTotal(ndx) {
         .xAxisLabel("Year")
         .y(d3.scaleLinear())
         .yAxis().ticks(10)
-        .yAxisLabel("Population in Billions");
+        .yAxisLabel("Population in Millions");
 }
 
 // Alternative and interchangeable view to above showing bar chart
@@ -58,9 +58,9 @@ function show_population_barTotal(ndx) {
     // Parse the date / time
     var parseDate = d3.time.format("%Y-%m").parse;
 
-    var x = d3.scale.ordinal().rangeRoundBands([0, width], .05);
+    var x = d3.scaleOrdinal().rangeRoundBands([0, width], .05);
 
-    var y = d3.scale.linear().range([height, 0]);
+    var y = d3.scaleLinear().range([height, 0]);
 
     var xAxis = d3.svg.axis()
         .scale(x)
@@ -79,7 +79,7 @@ function show_population_barTotal(ndx) {
         .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
 
-    d3.csv("worldPop.csv", function(error, data) {
+    d3.csv("data/population-total/worldPop.csv", function(error, data) {
         data.forEach(function(d) {
             d.date = parseDate(d.date);
             d.value = +d.value;
@@ -135,26 +135,12 @@ function change_data_display() {
 }
 
 
-
-showHide_pop_table();
-
-function showHide_pop_table() {
-    var popTable = document.getElementById("population_table");
-    if (popTable.style.display === "none") {
-        popTable.style.display = "block";
-    }
-    else {
-        popTable.style.display = "none";
-    }
-}
-
-
 //percentage gender of world population
 
 function show_percent_gender(ndx) {
     var parseDate = d3.time.format("%Y-%m").parse;
 
-    var worldPop = "../data/population-total/worldPop.csv";
+    var worldPop = "data/population-total/worldPop.csv";
 
     worldPop.forEach(function(d) {
         d.date = parseDate(d.date);
@@ -301,10 +287,11 @@ function show_percent_stackGender(ndx) {
                 return 0;
             }
         })
-        .x(d3.scale.ordinal())
+        .x(d3.scaleOrdinal())
         .xUnits(dc.units.ordinal)
         .xAxisLabel("Year")
         .yAxisLabel("Percentage Female/Male of World Population")
         .legend(dc.legend().x(320).y(20).itemHeight(15).gap(5))
         .margins({ top: 10, right: 100, bottom: 30, left: 30 });
 }
+

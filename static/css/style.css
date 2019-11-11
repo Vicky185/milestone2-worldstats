@@ -1,5 +1,24 @@
 /* styling for index.html */
 
+
+/* navbar */
+
+.navbar {
+  overflow: visible;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  z-index: 3;
+  width: 100%;
+}
+
+
+nav button {
+  float: right;
+}
+
 .callout-container {
   height: 100vh;
 
@@ -14,6 +33,7 @@
   justify-content: center;
 
   position: relative;
+  z-index: 1;
 }
 
 .opaque-overlay {
@@ -23,6 +43,7 @@
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 
 .jumbotron {
@@ -47,6 +68,8 @@
   margin-bottom: 30px;
   font-size: 2em;
 }
+
+/* image breaks between graph pages*/
 
 .br-image-victoria {
   height: 50vh;
@@ -99,12 +122,12 @@
 }
 
 
+/* footer styles */
+
 footer {
   background-color: #3c3744;
   color: #fbfff1;
 }
-
-
 
 
 /* graph styling */
@@ -121,7 +144,21 @@ footer {
 }
 
 
-/* table styling */ 
+#container {
+  width: 1200vh;
+  height: 1200vh;
+
+}
+
+.graphs {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+
+
+/* table styling */
+
 .objecttable td {
   padding: 8px;
 }
@@ -146,12 +183,14 @@ td.num {
 }
 
 /* headers */
+
 h3,
 h4,
 h5 {
-font-family: 'Lato', sans-serif;
-font-weight: bolder;
-color: #4A5B84;
+  font-family: 'Lato', sans-serif;
+  font-weight: bolder;
+  color: #4A5B84;
+  margin-bottom: 20px;
 }
 
 p {
@@ -161,14 +200,20 @@ p {
 }
 
 
-/* button */
+/* button styling */
+
 .btn {
   margin-bottom: 30px;
   margin-top: 10px;
   font-family: 'Quicksand', sans-serif;
 }
 
+.hide {
+  display: none;
+}
 
+
+/*general colouring*/
 /* electric blue color = #090c9b (9/12/155)
 black/grey for general text color = #3c3744 (60/55/68)
 mid-blue color = #3d52d5 (61/82/213)

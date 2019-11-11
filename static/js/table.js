@@ -1,4 +1,4 @@
-d3.text("../data/population-total/pop-total.csv", function(popTable) {
+d3.text("data/population-total/popTotal.csv", function(popTable) {
 
     var parsedCSV = d3.csv.parseRows(popTable);
 
