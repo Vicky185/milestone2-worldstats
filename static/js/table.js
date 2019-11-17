@@ -1,37 +1,27 @@
-d3.text("data/population-total/popTotal.csv", function(popTable) {
+//#population-table
 
-    var parsedCSV = d3.csv.parseRows(popTable);
+queue()
+    .defer(d3.csv, "data/population-total/popTotal.csv")
+    .await(makeGraphs);
 
-    var container = d3.select("population_table")
-        .append("table")
-        .style("border-collapse", "collapse")
-        .style("border", "2px black solid");
+function makeGraphs(error, popData) {
+    var ndx = crossfilter(popData);
 
-    d3.text("data.csv", function(data) {
-        var parsedCSV = d3.csv.parseRows(data);
+    tablePopulationByCountry(ndx);
 
-        var container = d3.select("body")
-            .append("table")
+    dc.renderAll();
 
-            .selectAll("tr")
-            .data(parsedCSV).enter()
-            .append("tr")
+}
 
-            .selectAll("td")
-            .data(function(d) { return d; }).enter()
-            .append("td")
-            .text(function(d) { return d; })
-            .style("border", "1px black solid")
-            .style("padding", "5px")
-            .on("mouseover", function() { d3.select(this).style("background-color", "aliceblue") })
-            .on("mouseout", function() { d3.select(this).style("background-color", "white") })
-            .text(function(d) { return d; })
-            .style("font-size", "12px");
-    });
-});
 
-showHide_pop_table();
+function tablePopulationByCountry(ndx) {
 
+}
+
+
+
+
+/*
 function showHide_pop_table() {
     var popTable = document.getElementById("population_table");
     if (popTable.style.display === "none") {
@@ -40,4 +30,4 @@ function showHide_pop_table() {
     else {
         popTable.style.display = "none";
     }
-}
+}*/

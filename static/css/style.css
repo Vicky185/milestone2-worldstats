@@ -3,6 +3,10 @@
 
 /* navbar */
 
+html {
+  scroll-behavior: smooth;
+}
+
 .navbar {
   overflow: visible;
   position: fixed; /* Set the navbar to fixed position */
@@ -191,6 +195,17 @@ h5 {
   font-weight: bolder;
   color: #4A5B84;
   margin-bottom: 20px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+
+.block-divider {
+  width: 500px;
+  height: 2px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 p {
