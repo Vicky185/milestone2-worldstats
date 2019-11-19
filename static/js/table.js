@@ -21,13 +21,16 @@ function tablePopulationByCountry(ndx) {
 
 
 
-/*
+
 function showHide_pop_table() {
-    var popTable = document.getElementById("population_table");
-    if (popTable.style.display === "none") {
-        popTable.style.display = "block";
+    var showTable = document.getElementById("population_table");
+    if (showTable.style.display === "none") {
+        showTable.style.display = "block";
+        document.getElementById("table-btn").innerHTML="Show Population Today for all Countries";
     }
     else {
-        popTable.style.display = "none";
+        showTable.style.display = "block";
+        showTable.style.display = "none";
+        document.getElementById("table-btn").innerHTML="Hide Population Today for all Countries";
     }
-}*/
+}
