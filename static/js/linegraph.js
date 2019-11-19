@@ -14,13 +14,13 @@ function makeGraphs(error, worldData) {
 }
 
 function lineWorldChart(ndx) {
-    var dim = ndx.dimension(dc.pluck('date'));
+        var dim = ndx.dimension(dc.pluck('date'));
     var total_population_per_year = dim.group().reduceSum(dc.pluck('population'));
 
     dc.lineChart("#pop-total-line")
         .width(1200)
-        .height(600)
-        .margins({ top: 30, right: 20, bottom: 30, left: 20 })
+        .height(500)
+        .margins({ top: 30, right: 30, bottom: 30, left: 30 })
         .dimension(dim)
         .group(total_population_per_year)
         .renderHorizontalGridLines(true)
@@ -31,3 +31,4 @@ function lineWorldChart(ndx) {
         .yAxisLabel("Population Total in Millions")
         .yAxis().ticks(8);
 }
+

@@ -19,8 +19,8 @@ function barWorldGraph(ndx) {
 
     dc.barChart("#pop-total-bar")
         .width(1200)
-        .height(600)
-        .margins({ top: 30, right: 20, bottom: 30, left: 20 })
+        .height(500)
+        .margins({ top: 30, right: 30, bottom: 30, left: 30 })
         .dimension(dim)
         .group(total_population_per_year)
         .transitionDuration(500)
@@ -29,4 +29,19 @@ function barWorldGraph(ndx) {
         .xAxisLabel("Date")
         .yAxisLabel("Population Total in Millions")
         .yAxis().ticks(8);
+}
+
+function change_data_display() {
+    var changeBar = document.getElementById("pop-total-bar");
+    var changeLine = document.getElementById("pop-total-line");
+    if (changeLine.style.display === "block") {
+        changeLine.style.display = "none";
+        changeBar.style.display = "block";
+        document.getElementById("btn-text").innerHTML="Let's go back to the line graph...";
+    }
+    else {
+        changeLine.style.display = "block";
+        changeBar.style.display = "none";
+        document.getElementById("btn-text").innerHTML="How about in a bar chart?";
+    }
 }

@@ -147,6 +147,9 @@ footer {
   shape-rendering: crispEdges;
 }
 
+.graph-styling {
+  text-align: center;
+}
 
 #container {
   width: 1200vh;

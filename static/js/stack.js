@@ -31,3 +31,4 @@ function percentMaleFemaleStack(ndx) {
         .legend(dc.legend().x(420).y(0).itemHeight(15).gap(5))
         .margins().right = 100;
 }
+
