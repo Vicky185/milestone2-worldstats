@@ -27,7 +27,9 @@
 
     <script type="text/javascript" src="static/js/bargraph.js"></script>
     <script type="text/javascript" src="static/js/linegraph.js"></script>
-    <script type="text/javascript" src="static/js/sexratio.js"></script>
+    <script type="text/javascript" src="static/js/composite.js"></script>
+    <script type="text/javascript" src="static/js/stack.js"></script>
+    <script type="text/javascript" src="static/js/table.js"></script>
 
 
 
@@ -144,15 +146,15 @@
             <div class="col-12">
                 <h3> Population Today</h3>
                 <hr class="block-divider">
-                <button class="btn btn-secondary btn-lg btn-block" id="population_table" onclick="showHide_pop_table()"> Click here to view a table of population by country</button>
+                <button class="btn btn-secondary btn-lg btn-block" id="table-btn" onclick="showHide_pop_table()"> Click here to view a table of population by country</button>
 
                 <div id="population-table" class="col-12 graph-styling"></div>
 
-                <!--  <table class="table table-hover" id="population_table" style="display: none">
+                <table class="table table-hover" id="population_table" style="display: none">
                     <thead id="head-columns">
                         <tr>
                             <th scope="col">Country</th>
-                            <th scope="col">Population in billions</th>
+                            <th scope="col">Total Population (billions)</th>
                             <th scope="col">Percentage Female</th>
                             <th scope="col">Percentage Male</th>
                         </tr>
@@ -165,7 +167,7 @@
                             <td></td>
                         </tr>
                     </tbody>
-                </table>-->
+                </table>
             </div>
         </div>
     </div>

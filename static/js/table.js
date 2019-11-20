@@ -1,7 +1,7 @@
 //#population-table
 
 queue()
-    .defer(d3.csv, "data/population-total/popTotal.csv")
+    .defer(d3.csv, "data/population-total/popTotalCountry.csv")
     .await(makeGraphs);
 
 function makeGraphs(error, popData) {
