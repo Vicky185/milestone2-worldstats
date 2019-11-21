@@ -2,9 +2,9 @@
 
 queue()
     .defer(d3.csv, "data/population-total/worldPop.csv")
-    .await(makeGraphs);
+    .await(makeLineGraph);
 
-function makeGraphs(error, worldData) {
+function makeLineGraph(error, worldData) {
     var ndx = crossfilter(worldData);
 
     lineWorldChart(ndx);
@@ -28,7 +28,6 @@ function lineWorldChart(ndx) {
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
         .xAxisLabel("Date")
-        .yAxisLabel("Population Total in Millions")
+        .yAxisLabel("Population Total in Billions")
         .yAxis().ticks(8);
 }
-

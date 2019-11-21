@@ -1,31 +1,32 @@
 //#percent-stackChart
 
 queue()
-    .defer(d3.csv, "data/population-total/worldPop.csv")
-    .await(makeGraphs);
+    .defer(d3.csv, "data/population-total/popMaleFemale.csv")
+    .await(makeStackGraph);
 
-function makeGraphs(error, worldData) {
-    var ndx = crossfilter(worldData);
+function makeStackGraph(error, popData) {
+    var ndx = crossfilter(popData);
+    
 
-    percentMaleFemaleStack(ndx);
+    stackMaleFemale(ndx);
 
     dc.renderAll();
 
 }
 
-function percentMaleFemaleStack(ndx) {
+function stackMaleFemale(ndx) {
 
     var dim = ndx.dimension(dc.pluck('date'));
 
-    var percentMaleByYear = dim.group().reduceSum(dc.pluck('percentMale'));
-    var percentFemaleByYear = dim.group().reduceSum(dc.pluck('percentFemale'));
+    var popMale_per_year = dim.group().reducem(dc.pluck('popM'));
+    var popFemale_per_year = dim.group().reduce(dc.pluck('popF'));
 
     dc.barChart("#percent-stackChart")
         .width(1200)
         .height(600)
         .dimension(dim)
-        .group(percentMaleByYear, "% Male")
-        .stack(percentFemaleByYear, "% Female")
+        .group(percentMaleByYear, "Male")
+        .stack(percentFemaleByYear, "Female")
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
         .legend(dc.legend().x(420).y(0).itemHeight(15).gap(5))

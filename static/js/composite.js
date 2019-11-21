@@ -1,19 +1,25 @@
-// #percentage-compositeChart
+// #compositeChart
 
 queue()
-    .defer(d3.csv, "data/population-total/worldPop.csv")
-    .await(makeGraphs);
+    .defer(d3.csv, "data/population-total/popMaleFemale.csv")
+    .await(makeCompGraphs);
 
-function makeGraphs(error, worldData) {
-    var ndx = crossfilter(worldData);
+function makeCompGraphs(error, popData) {
+    var ndx = crossfilter(popData);
 
+    showCompositeChart(ndx);
+
+    dc.renderAll();
+
+}
+function showCompositeChart(ndx) {
     var dim = ndx.dimension(dc.pluck('date'));
 
-    var percentMaleByYear = dim.group().reduceSum(dc.pluck('percentMale'));
-    var percentFemaleByYear = dim.group().reduceSum(dc.pluck('percentFemale'));
+    var popMale_by_year = dim.group().reduceSum(dc.pluck('popM'));
+    var popFemale_by_year = dim.group().reduceSum(dc.pluck('popF'));
 
-    var compositeChart = dc.compositeChart("#percentage-compositeChart");
-    
+    var compositeChart = dc.compositeChart("#compositeChart");
+
     compositeChart
         .width(1200)
         .height(600)
@@ -21,22 +27,21 @@ function makeGraphs(error, worldData) {
         .margins({ top: 30, right: 30, bottom: 30, left: 30 })
         .x(d3.scale.ordinal())
         .xAxisLabel("Date")
-        .yAxisLabel("Percentage Male/Female Makeup of Total Population")
+        .yAxisLabel("Total Population in Billions")
         .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
         .renderHorizontalGridLines(true)
         .compose([
             dc.lineChart(compositeChart)
             .colors('blue')
-            .group(percentMaleByYear, '% Male')
+            .group(popMale_by_year, 'Male')
             .dashStyle([2, 2]),
             dc.lineChart(compositeChart)
             .colors('red')
-            .group(percentFemaleByYear, '% Female')
+            .group(popFemale_by_year, 'Female')
             .dashStyle([5, 5]),
         ])
-        .brushOn(false);
-    dc.renderAll();
-
+        .brushOn(false)
+        .render();
 }
 
 

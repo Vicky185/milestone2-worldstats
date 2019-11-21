@@ -2,9 +2,9 @@
 
 queue()
     .defer(d3.csv, "data/population-total/worldPop.csv")
-    .await(makeGraphs);
+    .await(makeBarGraph);
 
-function makeGraphs(error, worldData) {
+function makeBarGraph(error, worldData) {
     var ndx = crossfilter(worldData);
 
     barWorldGraph(ndx);
@@ -12,6 +12,7 @@ function makeGraphs(error, worldData) {
     dc.renderAll();
 
 }
+
 
 function barWorldGraph(ndx) {
     var dim = ndx.dimension(dc.pluck('date'));
@@ -27,7 +28,7 @@ function barWorldGraph(ndx) {
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
         .xAxisLabel("Date")
-        .yAxisLabel("Population Total in Millions")
+        .yAxisLabel("Population Total in Billions")
         .yAxis().ticks(8);
 }
 

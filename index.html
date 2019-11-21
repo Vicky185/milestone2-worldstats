@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="static/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Quicksand:300,400,500,600,700&display=swap" rel="stylesheet">
 
+    <!-- css api for data tables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+
+
     <!-- js links -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.js"></script>
@@ -29,8 +33,10 @@
     <script type="text/javascript" src="static/js/linegraph.js"></script>
     <script type="text/javascript" src="static/js/composite.js"></script>
     <script type="text/javascript" src="static/js/stack.js"></script>
-    <script type="text/javascript" src="static/js/table.js"></script>
 
+
+    <!-- js link for api for data tables -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 
 
     <!--   <script src="static/js/graph.js"></script>-->
@@ -107,7 +113,7 @@
             <div class="col-12">
                 <h3> World Population Sex Ratio from 1960 - 2018</h3>
                 <hr class="block-divider">
-                <div id="percentage-compositeChart" class="col-12 graph-styling"></div>
+                <div id="compositeChart" class="col-12 graph-styling"></div>
                 <h5>How about hovering over the graph to see the differences of male to female population over time.</h5>
                 <p>The sex ratio – the share of the population that is male or female – varies greatly across the world. Globally, in 2017, the share of women in the world was 49.6%. There are many factors that can contribute to why there is a difference
                     between men and women. Can you name a few? </p>
@@ -150,19 +156,21 @@
 
                 <div id="population-table" class="col-12 graph-styling"></div>
 
-                <table class="table table-hover" id="population_table" style="display: none">
-                    <thead id="head-columns">
+                <table class="table table-hover display" id="population_table">
+                    <thead>
                         <tr>
-                            <th scope="col">Country</th>
-                            <th scope="col">Total Population (billions)</th>
-                            <th scope="col">Percentage Female</th>
-                            <th scope="col">Percentage Male</th>
+                            <th>Country</th>
+                            <th>Total Population (billions)</th>
+                            <th> % of Population Female</th>
+                            <th> % of Population Male</th>
                         </tr>
                     </thead>
-                    <tbody id="row-data">
+                    <tbody>
                         <tr>
                             <td></td>
                             <td></td>
+                        </tr>
+                        <tr>
                             <td></td>
                             <td></td>
                         </tr>
