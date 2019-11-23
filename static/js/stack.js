@@ -6,7 +6,7 @@ queue()
 
 function makeStackGraph(error, popData) {
     var ndx = crossfilter(popData);
-    
+
 
     stackMaleFemale(ndx);
 
@@ -18,8 +18,8 @@ function stackMaleFemale(ndx) {
 
     var dim = ndx.dimension(dc.pluck('date'));
 
-    var popMale_per_year = dim.group().reducem(dc.pluck('popM'));
-    var popFemale_per_year = dim.group().reduce(dc.pluck('popF'));
+    var popMale_per_year = dim.group().reduceSum(dc.pluck('popM'));
+    var popFemale_per_year = dim.group().reduceSum(dc.pluck('popF'));
 
     dc.barChart("#percent-stackChart")
         .width(1200)
@@ -29,7 +29,8 @@ function stackMaleFemale(ndx) {
         .stack(popFemale_per_year, "Female")
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
+        .xAxisLabel("Date")
+        .yAxisLabel("Population Total in Billions")
         .legend(dc.legend().x(420).y(0).itemHeight(15).gap(5))
         .margins().right = 100;
 }
-
