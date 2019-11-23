@@ -17,7 +17,7 @@ country,popTotal,percentPopFemale,percentPopMale
 "Bangladesh",161356039,49.3,50.6
 "Bulgaria",7024216,51.4,48.5
 "Bahrain",1569439,36.3,63.6
-"Bahamas, The",385640,51.4,48.5
+"The Bahamas",385640,51.4,48.5
 "Bosnia and Herzegovina",3323929,51.0,48.9
 "Belarus",9485386,53.4,46.5
 "Belize",383071,50.1,49.8
@@ -33,10 +33,10 @@ country,popTotal,percentPopFemale,percentPopMale
 "Channel Islands",170499,50.5,49.4
 "Chile",18729160,50.7,49.2
 "China",1392730000,48.6,51.3
-"Cote d'Ivoire",25069229,49.5,50.4
+"Cote dIvoire",25069229,49.5,50.4
 "Cameroon",25216237,50.0,49.9
-"Congo, Dem. Rep.",84068091,50.0,49.9
-"Congo, Rep.",5244363,50.0,49.9
+"Congo Democratic Republic",84068091,50.0,49.9
+"Congo Republic",5244363,50.0,49.9
 "Colombia",49648685,50.9,49.0
 "Comoros",832322,49.5,50.4
 "Cabo Verde",543767,49.8,50.1
@@ -51,14 +51,14 @@ country,popTotal,percentPopFemale,percentPopMale
 "Dominican Republic",10627165,50.0,49.9
 "Algeria",42228429,49.4,50.5
 "Ecuador",17084357,49.9,50.0
-"Egypt, Arab Rep.",98423595,49.4,50.5
+"Egypt",98423595,49.4,50.5
 "Spain",46723749,50.8,49.1
 "Estonia",1320884,52.8,47.1
 "Ethiopia",109224559,49.9,50.0
 "Finland",5518050,50.7,49.2
 "Fiji",883483,49.3,50.6
 "France",66987244,51.5,48.4
-"Micronesia, Fed. Sts.",112640,49.1,50.8
+"Micronesia Federation of States",112640,49.1,50.8
 "Gabon",2119275,49.0,50.9
 "United Kingdom",66488991,50.6,49.3
 "Georgia",3731000,52.2,47.7
@@ -72,7 +72,7 @@ country,popTotal,percentPopFemale,percentPopMale
 "Guatemala",17247807,50.7,49.2
 "Guam",165768,49.4,50.5
 "Guyana",779004,49.8,50.1
-"Hong Kong SAR, China",7451000,53.9,46.0
+"Hong Kong",7451000,53.9,46.0
 "Honduras",9587522,50.0,49.9
 "Croatia",4089400,51.8,48.1
 "Haiti",11123176,50.6,49.3
@@ -80,7 +80,7 @@ country,popTotal,percentPopFemale,percentPopMale
 "Indonesia",267663435,49.6,50.3
 "India",1352617328,48.0,51.9
 "Ireland",4853506,50.4,49.5
-"Iran, Islamic Rep.",81800269,49.4,50.5
+"Iran Islamic Republic",81800269,49.4,50.5
 "Iraq",38433600,49.4,50.5
 "Iceland",353574,49.8,50.1
 "Israel",8883800,50.2,49.7
@@ -93,19 +93,19 @@ country,popTotal,percentPopFemale,percentPopMale
 "Kyrgyz Republic",6315800,50.5,49.4
 "Cambodia",16249798,51.1,48.8
 "Kiribati",115847,50.8,49.1
-"Korea, Rep.",51635256,49.9,50.0
+"Korea Republic",51635256,49.9,50.0
 "Kuwait",4137309,39.5,60.4
 "Lao PDR",7061507,49.7,50.1
 "Lebanon",6848925,49.7,50.2
 "Liberia",4818977,49.7,50.2
 "Libya",6678567,49.4,50.5
-"St. Lucia",181889,50.7,49.2
+"St Lucia",181889,50.7,49.2
 "Sri Lanka",21670000,51.9,48.0
 "Lesotho",2108132,50.7,49.2
 "Lithuania",2789533,53.7,46.2
 "Luxembourg",607728,49.3,50.4
 "Latvia",1926542,54.0,45.9
-"Macao SAR, China",631636,51.9,48.0
+"Macao China",631636,51.9,48.0
 "Morocco",36029138,50.4,49.5
 "Moldova",3545883,52.0,47.9
 "Madagascar",26262368,50.1,49.8
@@ -139,7 +139,7 @@ country,popTotal,percentPopFemale,percentPopMale
 "Papua New Guinea",8606316,48.9,51.0
 "Poland",37978548,51.5,48.4
 "Puerto Rico",3195153,52.4,47.5
-"Korea, Dem. People’s Rep.",25549819,51.0,48.9
+"Korea Democratic Peoples Republic.",25549819,51.0,48.9
 "Portugal",10281762,52.7,47.2
 "Paraguay",6956071,49.1,50.8
 "West Bank and Gaza",4569087,49.2,50.7
@@ -171,7 +171,7 @@ country,popTotal,percentPopFemale,percentPopMale
 "Thailand",69428524,51.2,48.7
 "Tajikistan",9100837,49.5,50.4
 "Turkmenistan",5850908,50.7,49.2
-"Timor-Leste",1267972,49.4,50.5
+"Timor Leste",1267972,49.4,50.5
 "Tonga",103197,49.9,50.0
 "Trinidad and Tobago",1389858,50.5,49.4
 "Tunisia",11565204,50.4,49.5
@@ -182,13 +182,13 @@ country,popTotal,percentPopFemale,percentPopMale
 "Uruguay",3449299,51.7,48.2
 "United States",327167434,50.5,49.4
 "Uzbekistan",32955400,50.1,49.8
-"St. Vincent and the Grenadines",110210,49.2,50.7
-"Venezuela, RB",28870195,50.6,49.3
-"Virgin Islands (U.S.)",106977,52.4,47.5
+"St Vincent and the Grenadines",110210,49.2,50.7
+"Venezuela",28870195,50.6,49.3
+"Virgin Islands",106977,52.4,47.5
 "Vietnam",95540395,50.0,49.9
 "Vanuatu",292680,49.2,50.7
 "Samoa",196130,48.2,51.7
-"Yemen, Rep.",28498687,49.6,50.3
+"Yemen Republic",28498687,49.6,50.3
 "South Africa",57779622,50.6,49.3
 "Zambia",17351822,50.4,49.5
 "Zimbabwe",14439018,52.3,47.6

@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Quicksand:300,400,500,600,700&display=swap" rel="stylesheet">
 
     <!-- css api for data tables -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
 
 
     <!-- js links -->
@@ -33,11 +33,12 @@
     <script type="text/javascript" src="static/js/linegraph.js"></script>
     <script type="text/javascript" src="static/js/composite.js"></script>
     <script type="text/javascript" src="static/js/stack.js"></script>
+    <script type="text/javascript" src="static/js/table.js"></script>
 
 
     <!-- js link for api for data tables -->
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
-
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
 
     <!--   <script src="static/js/graph.js"></script>-->
     <!--  <script src="static/js/table.js"></script> -->
@@ -135,7 +136,7 @@
                 <div id="percent-stackChart" class="col-12 graph-styling"></div>
                 <h5> What do you think - are men or women dominating the world's total population?</h5>
                 <p>As you can see in the stacked chart, we see that the difference isn't huge but that the number of men in the world has increased while women have decreased. In general, however, the world's total population have a very close male to female
-                    ratio which fluctuates between 49 - 51%. For more information take a look at the UN Data World Bank!</p>
+                    ratio which fluctuates between 49 - 51%. For more information take a look at the <a href="https://data.worldbank.org/"> UN Data World Bank!</a></p>
 
             </div>
         </div>
@@ -150,14 +151,11 @@
         <!--  showing population table -->
         <div class="graph-four graphs" id="graph-four">
             <div class="col-12">
-                <h3> Population Today</h3>
+                <h3> Population Today (2018/19)</h3>
                 <hr class="block-divider">
-                <button class="btn btn-secondary btn-lg btn-block" id="table-btn" onclick="showHide_pop_table()"> Click here to view a table of population by country</button>
-
                 <div id="population-table" class="col-12 graph-styling"></div>
-
-                <table class="table table-hover display" id="population_table">
-                    <thead>
+                <table class="table table-hover display order-column row-border" id="population_table">
+                    <thead class="table-color">
                         <tr>
                             <th>Country</th>
                             <th>Total Population (billions)</th>
@@ -169,8 +167,20 @@
                         <tr>
                             <td></td>
                             <td></td>
+                            <td></td>
+                            <td></td>
+
                         </tr>
                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
                             <td></td>
                             <td></td>
                         </tr>
@@ -184,20 +194,15 @@
 
 
     <footer class="container-fluid ">
-        <div class="col-md-6">
-            <p>
-                <a class="uppercase general-sub footer-heading" target="_blank" href="#">Source: Data World Bank</a>
-            </p>
+        <div class="footer-heading">
+            <a class="uppercase general-sub" target="_blank" href="https://www.worldbank.org/">Source: Data World Bank</a>
         </div>
-        <div class="col-md-6">
-            <p class="uppercase general-sub footer-heading"> Share </p>
-            <ul class="list-inline social-links footer-text">
-                <li class="list-inline-item"><a target="_blank" href="/"><i class="fab fa-facebook" aria-hidden="true"></i><span
-                    class="sr-only"> </span></a></li>
-                <li class="list-inline-item"><a target="_blank" href="#"><i class="fab fa-twitter"
-                                                                        aria-hidden="true"></i><span
-                    class="sr-only"> </span></a></li>
-            </ul>
+        <div>
+        <ul class="list-inline social-links footer-text">
+            <a class="uppercase general-sub share-right"> Share </a>
+            <li class="list-inline-item footer-image"><a target="_blank" href="https://www.facebook.com/"><i class="fab fa-facebook" aria-hidden="true"></i><span class="sr-only"> </span></a></li>
+            <li class="list-inline-item footer-image"><a target="_blank" href="https://twitter.com/?lang=en-gb"><i class="fab fa-twitter" aria-hidden="true"></i><span class="sr-only"> </span></a></li>
+        </ul>
         </div>
     </footer>
 
