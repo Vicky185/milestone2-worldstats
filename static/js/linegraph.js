@@ -20,7 +20,7 @@ function lineWorldChart(ndx) {
     dc.lineChart("#pop-total-line")
         .width(1200)
         .height(500)
-        .margins({ top: 30, right: 30, bottom: 30, left: 30 })
+        .margins({ top: 50, right: 30, bottom: 50, left: 30 })
         .dimension(dim)
         .group(total_population_per_year)
         .renderHorizontalGridLines(true)

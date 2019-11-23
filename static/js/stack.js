@@ -21,6 +21,7 @@ function stackMaleFemale(ndx) {
     var popMale_per_year = dim.group().reduceSum(dc.pluck('popM'));
     var popFemale_per_year = dim.group().reduceSum(dc.pluck('popF'));
 
+
     dc.barChart("#percent-stackChart")
         .width(1200)
         .height(600)
@@ -29,8 +30,10 @@ function stackMaleFemale(ndx) {
         .stack(popFemale_per_year, "Female")
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
+        .margins({ top: 50, right: 30, bottom: 50, left: 30 })
+        .renderHorizontalGridLines(true)
         .xAxisLabel("Date")
         .yAxisLabel("Population Total in Billions")
-        .legend(dc.legend().x(420).y(0).itemHeight(15).gap(5))
+        .legend(dc.legend().x(80).y(20).itemHeight(15).gap(15))
         .margins().right = 100;
 }

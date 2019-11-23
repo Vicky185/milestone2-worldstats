@@ -21,9 +21,10 @@ function barWorldGraph(ndx) {
     dc.barChart("#pop-total-bar")
         .width(1200)
         .height(500)
-        .margins({ top: 30, right: 30, bottom: 30, left: 30 })
+        .margins({ top: 50, right: 30, bottom: 50, left: 30 })
         .dimension(dim)
         .group(total_population_per_year)
+        .renderHorizontalGridLines(true)
         .transitionDuration(500)
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
@@ -38,11 +39,11 @@ function change_data_display() {
     if (changeLine.style.display === "block") {
         changeLine.style.display = "none";
         changeBar.style.display = "block";
-        document.getElementById("btn-text").innerHTML="Let's go back to the line graph...";
+        document.getElementById("btn-text").innerHTML = "Let's go back to the line graph...";
     }
     else {
         changeLine.style.display = "block";
         changeBar.style.display = "none";
-        document.getElementById("btn-text").innerHTML="How about in a bar chart?";
+        document.getElementById("btn-text").innerHTML = "How about in a bar chart?";
     }
 }

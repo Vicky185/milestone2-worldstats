@@ -1,6 +1,5 @@
 /* styling for index.html */
 
-
 /* navbar */
 
 html {
@@ -9,8 +8,10 @@ html {
 
 .navbar {
   overflow: visible;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
+  position: fixed;
+  /* Set the navbar to fixed position */
+  top: 0;
+  /* Position the navbar at the top of the page */
   padding-bottom: 20px;
   margin-bottom: 10px;
   padding-top: 10px;
@@ -129,10 +130,32 @@ nav button {
 /* footer styles */
 
 footer {
-  background-color: #3c3744;
-  color: #fbfff1;
+  background-color: #5A6169;
+  color: #fff;
 }
 
+.footer-image {
+  color: #fff;
+  font-size: 1.25em;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.footer-heading {
+  color: #fff;
+  font-size: 1.25em;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: inline-block;
+}
+
+.share-right,
+.footer-text {
+  text-align: right;
+  display: inline-block;
+}
 
 /* graph styling */
 
@@ -149,6 +172,7 @@ footer {
 
 .graph-styling {
   text-align: center;
+  padding-bottom: 30px;
 }
 
 #container {
@@ -187,6 +211,11 @@ td.center {
 th.num,
 td.num {
   text-align: right;
+}
+
+.table-color {
+  background-color: #5A6169;
+  color: #fff;
 }
 
 /* headers */
@@ -232,6 +261,7 @@ p {
 
 
 /*general colouring*/
+
 /* electric blue color = #090c9b (9/12/155)
 black/grey for general text color = #3c3744 (60/55/68)
 mid-blue color = #3d52d5 (61/82/213)
