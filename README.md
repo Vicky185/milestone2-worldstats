@@ -11,7 +11,6 @@ To provide an informative and interactive insight into world demographics - as t
 The data is taken and adapted from the [UN Data World Bank](_https://data.worldbank.org/_).
 
 *The following requirements were set at the beginning of the project:*
-
 * primary target audience are general geographers, people interested in finding out about data and world statistics
 * show how data can be presented in an easy,readable and accessible way
 * show the audience about the changes to our population on a page
@@ -46,8 +45,8 @@ As an informed and studious demographer  , I want...
 
 ## Structure
 
-
-### Skeleton
+One page of navigation, scrolling down one page to next view. 
+Four graphs/tables which are separated by image to break up the page and for styling. 
 
 ### Surface/Design
 
@@ -99,7 +98,7 @@ Slight bug on the first graph's button which requires a double click at beginnin
 
 ## Deployment
 
-This project was built using Cloud9 and then uploading via Git onto GitHub.
+This project was built using Cloud9 and then uploading via Git onto GitHub - final access has been through the GitHub Pages.
 
 If you want to access the project please log into GitHub and select the 'https://vicky185.github.io/milestone2-worldstats/#' repository. From there you can access the HTML code and CSS styling. You can also see the site via the 'Settings' tab, then scroll down to 'GitHub Pages' (if link not there, select 'Master branch' from dropdown). The site will refresh then you will be able to view it after 5-10 minutes.
 
@@ -108,14 +107,15 @@ To add this to your own repository, please go to the 'Code' tab and click the gr
 ## Credits and Acknowledgement
 
 For the information on each graph and the data, I used information from the UN Data World Bank and news articles:
+* _https://data.worldbank.org/_
+* _https://ourworldindata.org/gender-ratio_
 
 For the images, I used free and downloadable stock images from:
+* _https://www.pexels.com/_ 
 
 I also used a lot of the Mark Bostock d3 libraries and graph templates from: 
+* _https://bl.ocks.org/_
+* _https://cdnjs.com/_
 
-My mentor Spencer Barriball also helped a lot with this and the tricky bits of code. 
+My mentor Spencer Barriball also helped a lot with this and the tricky bits of code. Thanks, Spence, for your patience with me, and also thanks to Code Institute Tutor Support who steered me right! 
 
-Help with coding and styling the site -
-
-W3Schools
-Stack OverFlow
