@@ -5,40 +5,48 @@ queue()
     .await(makeCompGraph);
 
 function makeCompGraph(error, popData) {
-
     var ndx = crossfilter(popData);
+
+    showCompChart(ndx);
+
+    dc.renderAll();
+
+}
+
+function showCompChart(ndx) {
 
     var dim = ndx.dimension(dc.pluck('date'));
 
-    var popMale_per_year = dim.group().reduceSum(dc.pluck('popM'));
-    var popFemale_per_year = dim.group().reduceSum(dc.pluck('popF'));
+    var popMale = dim.group().reduceSum(dc.pluck('popM'));
+    var popFemale = dim.group().reduceSum(dc.pluck('popF'));
 
     var compositeChart = dc.compositeChart('#compositeChart');
 
     compositeChart
         .width(1200)
         .height(600)
+        .dimension(dim)
+        .group(popMale)
+        .group(popFemale)
         .x(d3.scale.ordinal())
-        .xAxisLabel("Date")
-        .yAxisLabel("Total Population in Billions")
-        .margins({ top: 50, right: 30, bottom: 50, left: 30 })
-        .legend(dc.legend().x(80).y(20).itemHeight(13).gap(15))
-        .renderHorizontalGridLines(true)
+        .xUnits(dc.units.ordinal)
         .compose([
             dc.lineChart(compositeChart)
-            .dimension(dim)
+            .group(popMale, "Male")
             .colors('blue')
-            .group(popMale_per_year, "Male")
             .dashStyle([2, 2]),
             dc.lineChart(compositeChart)
-            .dimension(dim)
+            .group(popFemale, "Female")
             .colors('red')
-            .group(popFemale_per_year, "Female")
-            .dashStyle([5, 5]),
+            .dashStyle([5, 5])
         ])
+        .xAxisLabel("Date")
+        .yAxisLabel("Total Population in Billions")
+        .margins({ top: 50, right: 50, bottom: 50, left: 50 })
+        .legend(dc.legend().x(80).y(20).itemHeight(13).gap(15))
+        .renderHorizontalGridLines(true)
         .brushOn(false)
         .render();
-    dc.renderAll();
 }
 
 
@@ -46,7 +54,7 @@ function makeCompGraph(error, popData) {
 //hint button
 
 function show_hint(obj) {
-    obj.innerHTML = "How about social, economic and cultural factors? Life Expectancy, Sex ratios at birth and Geographical factors";
+    obj.innerHTML = "How about social, economic and cultural factors? Life Expectancy, Birth rates and Geographical factors.";
 }
 
 function hide_hint(obj) {
