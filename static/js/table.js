@@ -1,19 +1,20 @@
 //#population-table
 
 $(document).ready(function() {
-    $('#population_table').dataTable({
-        data: popTotalCountryData,
-        columns: [
-            { data: 'country' },
-            { data: 'popTotal' },
-            { data: 'percentPopFemale' },
-            { data: 'percentPopMale' }
-        ]
-    });
+  $('#population_table').dataTable({
+    data: popTotalCountryData,
+    columns: [
+      { data: 'country' },
+      { data: 'popTotal',
+        render: $.fn.dataTable.render.number( ',', 3)
+      },
+      { data: 'percentPopFemale' },
+      { data: 'percentPopMale' }
+    ]
+  });
 });
 
-var popTotalCountryData = [
-  {
+var popTotalCountryData = [{
     "country": "Aruba",
     "popTotal": 105845,
     "percentPopFemale": 52.5,
