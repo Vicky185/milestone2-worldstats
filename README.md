@@ -10,14 +10,14 @@ To provide an informative and interactive insight into world demographics - as t
 
 The data is taken and adapted from the [UN Data World Bank](_https://data.worldbank.org/_).
 
-*** The following requirements were set at the beginning of the project: ***
+*The following requirements were set at the beginning of the project:*
 
-    *primary target audience are general geographers, people interested in finding out about data and world statistics
-    *show how data can be presented in an easy,readable and accessible way
-    *show the audience about the changes to our population on a page
-    *ensure a smooth read of data and exploration with the mouse to find out new information
+* primary target audience are general geographers, people interested in finding out about data and world statistics
+* show how data can be presented in an easy,readable and accessible way
+* show the audience about the changes to our population on a page
+* ensure a smooth read of data and exploration with the mouse to find out new information
 
-*** User stories ***
+*User stories*
 As a general user,
 * I want the page to be simple and easy to use
 * I am generally curious about the world and how populations have grown
