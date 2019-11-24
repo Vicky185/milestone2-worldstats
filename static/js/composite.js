@@ -37,8 +37,8 @@ function showCompChart(ndx) {
             .dashStyle([2, 2]),
             dc.lineChart(compositeChart)
             .group(popFemale, "Female")
-            .colors('red')
-            .dashStyle([5, 5])
+            .colors('orange')
+            .dashStyle([5, 5]),
         ])
         .xAxisLabel("Date")
         .yAxisLabel("Total Population in Billions")
