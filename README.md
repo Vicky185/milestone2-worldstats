@@ -8,7 +8,7 @@ In this website you can have a look at a variety of graph and chart types, showi
 
 To provide an informative and interactive insight into world demographics - as they vary over time, by gender and country.
 
-The data is taken and adapted from the [UN Data World Bank](_https://data.worldbank.org/_ UN Data World Bank).
+The data is taken and adapted from the [UN Data World Bank](_https://data.worldbank.org/_).
 
 *** The following requirements were set at the beginning of the project: ***
 
@@ -31,15 +31,14 @@ As an informed and studious demographer  , I want...
 
 ## Features
 
-*** For this site, a range of features were used: ***
+#### For this site, a range of features were used:
 
 * HTML, CSS & JavaScript
 * D3, DC, Crossfilter, Queue and JQuery libraries
-* CSV datasets and external files
-* Mobile-first approach
+* I also used the DataTables API (_https://datatables.net/_)
+* CSV datasets and external files (from _https://data.worldbank.org/_)
 
-
-*** Additional features in the future will include:***
+#### Additional features in the future will include:
 
 * additional pages which contain information and interactive datasets on birthrates, fertility and death rates
 * population counter
@@ -47,13 +46,17 @@ As an informed and studious demographer  , I want...
 
 ## Structure
 
+
 ### Skeleton
 
 ### Surface/Design
 
-*** Fonts ***
 
-*** Design & Colour Scheme ***
+*** Design, Colour Scheme and Fonts ***
+
+* Bootswatch theme used for graph and general styling and design
+* Bootstrap was used for general styling
+* Fonts used were: Lato and Quicksand from Google Fonts.
 
 ## Technologies
 
@@ -68,19 +71,37 @@ Below is listed all of the technologies used to create this site:
     * Crossfilter
     * Queue
     * JQuery
-* Bootstrap -  https://getbootstrap.com/
-* Google Fonts - https://fonts.google.com/
+*DataTables API - _https://datatables.net/_
+* Bootstrap -  _https://getbootstrap.com/_
+* Google Fonts - _https://fonts.google.com/_
 * AWS Cloud9 - as IDE
 * GitHub - as the remote backup used on this project and for other project users to view the code
-* UN Data World Bank - https://data.worldbank.org/
+* UN Data World Bank - _https://data.worldbank.org/_
 
 ## Testing
+
+In testing, it has been to check that the navbar works well when navigating through the pages and sticks with you as you move down. 
+
+The graphs have been tested with hovering and clicking. It proves to be interactive and encouraging to users to explore the page. 
+##### Navigation: 
+* Go to the Top and select the "Population Table".
+Click on the title.
+You should be driven smoothly down the entire website to the bottom to where there is a population table. 
+The table has a search option in the top right hand corner, if you search a number, a country the table will shorten and show results according to your search.
+On the top left you have a dropdown menu letting you choose how many rows you see.
+There is also workable pagination at the bottom right of the table which takes you to further rows of country information.
+The headers of the table will alter the cursor encouraging you to click, this will alter ascension and descension order of the rows in the table. 
+Hovering over the rows will highlight them.
+
+Any bugs?
+Slight bug on the first graph's button which requires a double click at beginning. 
+
 
 ## Deployment
 
 This project was built using Cloud9 and then uploading via Git onto GitHub.
 
-If you want to access the project please log into GitHub and select the 'XXXX' repository. From there you can access the HTML code and CSS styling. You can also see the site via the 'Settings' tab, then scroll down to 'GitHub Pages' (if link not there, select 'Master branch' from dropdown). The site will refresh then you will be able to view it after 5-10 minutes.
+If you want to access the project please log into GitHub and select the 'https://vicky185.github.io/milestone2-worldstats/#' repository. From there you can access the HTML code and CSS styling. You can also see the site via the 'Settings' tab, then scroll down to 'GitHub Pages' (if link not there, select 'Master branch' from dropdown). The site will refresh then you will be able to view it after 5-10 minutes.
 
 To add this to your own repository, please go to the 'Code' tab and click the green button 'Clone/Download'.
 
