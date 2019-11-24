@@ -95,6 +95,12 @@ Hovering over the rows will highlight them.
 Any bugs?
 Slight bug on the first graph's button which requires a double click at beginning. 
 
+There were significant bugs throughout the creating of this project. The D3, DC and Crossfilter libraries were very tricky and complex to move through, especially given updates to the libraries and a number of online sources and codes indicating a variety of uses for the code which provided inconsistencies in deployment. 
+The bugs were particularly around the data and reading this through. To overcome this I had to do several re-tests and amendments. To fix it, I previously had all the graphs and charts rendered in one js file. But it wasn't working well with the deployment and no graphs would show. To fix I had to separate each graph into their own file to clearly identify which data was passing in where. I didn't revert back to having it in one file as having separated it and it then working clearly I felt the neatness of the directories facilitated the identification of any future bugs. 
+
+Any bugs thereafter lay within the stackChart which didn't render. This was due to a typo which I spotted and rectified.
+The Composite Chart was the last of the graphs to show and didn't show because of the plotting and grouping of the axes. The problem lay within plotting the scale of the x-axis which once put into the chart code the other graphs/charts on the page would disappear. I continuously refreshed and what was needed that the y-axis points and grouping needed to be called in both the compose dc.linchart code and in the main compositeChart code. 
+
 
 ## Deployment
 
